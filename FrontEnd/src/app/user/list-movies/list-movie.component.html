@@ -1,0 +1,26 @@
+  <h3 class="p-3 text-center">Movies</h3>
+<div class="container">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Movie Name</th>
+                <th>Language</th>
+                <th>Date</th>
+                <th>Tickets</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let mvee of movies">
+                <td>{{mvee.moviename}}</td>
+                <td>{{mvee.movieLanguage}}</td>
+                <td>{{mvee.movieDate}}</td>
+                <td>{{mvee.ticket.numberofTickets}}</td>
+                <button type="button" class="btn btn-success" (click)="bookMovie(mvee.movieid)">Book</button>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+ 
+  

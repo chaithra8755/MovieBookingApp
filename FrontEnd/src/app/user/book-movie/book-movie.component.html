@@ -1,0 +1,69 @@
+  <h3 class="p-3 text-center">Movies</h3>
+  <form (ngSubmit)="updateTickets()">
+    <div class="container">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Movie Name</th>
+                    <th>date</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Theatre Name</th>
+                    <th>Tickets</th>
+                    <th>Book Ticket</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <!-- <td><input
+                        disabled
+                        class="movieDetail-right"
+                        [(ngModel)]="movie.moviename"
+                        [ngModelOptions]="{standalone: true}"
+                    /></td>
+
+                    <td>  <input
+                        
+                    disabled
+                    class="movieDetail-right"
+                    [(ngModel)]="movie.theatreName"
+                    [ngModelOptions]="{standalone: true}"
+                    /></td>
+
+                    <td><input
+                        disabled
+                        class="movieDetail-right"
+                        [(ngModel)]="movie.movieDescription"
+                        [ngModelOptions]="{standalone: true}"
+                    /></td> -->
+
+                    <!-- <td><input
+                        class="movieDetail-right"
+                        [(ngModel)]="movie.ticket.numberofTickets"
+                        [ngModelOptions]="{standalone: true}"
+                    /></td> -->
+                    <td>{{movieName}}</td>
+                    <td>{{movieDate}}</td> 
+                    <td>{{showStartTime}}</td>
+                    <td>{{showEndTime}}</td>
+                    <td>{{theatreName}}</td>
+                    <td>{{noOfTicket}}</td>
+                    <td><input type="number"
+                        class="movieDetail-right"
+                        [(ngModel)]="ticket"
+                        [ngModelOptions]="{standalone: true}"
+                    /></td>
+                    <td> <button type="button" class="btn btn-primary mb-2" (click)="updateTickets()">Book</button></td>
+                </tr>
+            </tbody>
+           
+        </table>
+    </div>
+  </form> 
+  <div  *ngIf="isUpdated">
+    <h4>{{msg}}</h4>
+    <button type="button" class="btn btn-primary mb-2" routerLink="/listMovies">Back</button>
+
+</div>
+
+   

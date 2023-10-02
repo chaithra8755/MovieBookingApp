@@ -1,0 +1,98 @@
+<div class="container ">
+    <h2 class="card-heading">Add Movie</h2>
+    <form (ngSubmit)="saveMovie()">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group"><label for="moviename" disabled="true" class="sr-only">movie name</label>
+                    <input type="text" [(ngModel)]="moviename" [ngModelOptions]="{standalone: true}" class="form-control" id="moviename" placeholder="Enter Movie name"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group"><label for="movieMins" class="sr-only">Duration</label>
+                    <input type="text" [(ngModel)]="movieMins" [ngModelOptions]="{standalone: true}"  class="form-control" id="movieMins" placeholder="duration in mins"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group"><label for="movieGenre" class="sr-only">Genre</label>
+                    <input type="text" [(ngModel)]="movieGenre" [ngModelOptions]="{standalone: true}" class="form-control" id="movieGenre" placeholder="Enter genre"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group"><label for="movieLanguage" class="sr-only">Language</label>
+                    <input type="text" [(ngModel)]="movieLanguage" [ngModelOptions]="{standalone: true}" class="form-control" id="movieLanguage" placeholder="enter language"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group"><label for="movieDescription" class="sr-only">Description</label>
+                    <input type="text" [(ngModel)]="movieDescription" [ngModelOptions]="{standalone: true}" class="form-control" id="movieDescription" placeholder="movieDescription "></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group"><label for="movieRating" class="sr-only">rating</label>
+                    <input type="text" [(ngModel)]="movieRating" [ngModelOptions]="{standalone: true}" class="form-control" id="movieRating" placeholder= "movieRating"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group"><label for="movieDate" class="sr-only">Movie date</label>
+                    <input type="date" [(ngModel)]="movieDate" [ngModelOptions]="{standalone: true}" class="form-control" id="movieDate"></div>
+            </div>
+        </div>
+
+        //
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group"><label for="numberofTickets" class="sr-only">Tickets</label>
+                    <input type="number" [(ngModel)]="numberofTickets" [ngModelOptions]="{standalone: true}" class="form-control" id="numberofTickets"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group"><label for="theatreName" class="sr-only">Movie theatreName</label>
+                    <input type="text" [(ngModel)]="theatreName" [ngModelOptions]="{standalone: true}" class="form-control" id="theatreName"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group"><label for="showStartTime" class="sr-only">showStartTime</label>
+                    <input type="datetime-local" [(ngModel)]="showStartTime" [ngModelOptions]="{standalone: true}" class="form-control" id="showStartTime"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group"><label for="showEndTime" class="sr-only">showEndTime</label>
+                    <input type="datetime-local" [(ngModel)]="showEndTime" [ngModelOptions]="{standalone: true}" class="form-control" id="showEndTime"></div>
+            </div>
+        </div>
+
+        <div class="row ">
+            <div class="col-md-1">
+                <div class="form-group" >
+                    <button type="submit" class="btn btn-primary mb-2">Save</button>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="form-group" *ngIf="modify">
+                    <button type="button" class="btn btn-primary mb-2" (click)="clearFields()">Clear</button></div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group"><button type="button" class="btn btn-primary mb-2" (click)="homeNavigate()">Home</button></div>
+            </div>
+        </div>
+
+        <div style="color: red;" *ngIf="fnMeassge">
+            {{fnMeassge}}
+        </div>
+    </form>
+</div>
+
+movie add under development

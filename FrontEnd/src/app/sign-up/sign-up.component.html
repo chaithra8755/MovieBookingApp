@@ -1,0 +1,54 @@
+<div class="container mt-5">
+    <div class="card" style="padding: 20px;">
+        <h2 class="card-heading">Enter Details</h2>
+        <form (ngSubmit)="saveUser()">
+            <label for="userName" disabled="true" class="sr-only">User Name</label>
+            <input type="text" #name="ngModel" ngModel required [(ngModel)]="userName" [ngModelOptions]="{standalone: true}" class="form-control mb-3" id="userName" placeholder="User Name">
+            <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
+                Please Enter the user name
+            </div>
+            <label for="userFirstName" class="sr-only">First Name</label>
+            <input type="text" #fname="ngModel" ngModel required [(ngModel)]="userFirstName" [ngModelOptions]="{standalone: true}" class="form-control mb-3" id="userFirstName" placeholder="First Name">
+            <div *ngIf="fname.touched && fname.invalid" class="alert alert-danger">
+                Please Enter the First name
+            </div>
+            <label for="userLastName" class="sr-only">Last Name</label>
+            <input type="text" #lname="ngModel" ngModel required [(ngModel)]="userLastName" [ngModelOptions]="{standalone: true}" class="form-control mb-3" id="userLastName" placeholder="Last Name">
+            <div *ngIf="lname.touched && lname.invalid" class="alert alert-danger">
+                Please Enter the last name
+            </div>
+            <label for="password" class="sr-only">Password</label>
+
+            <input type="text" #pass="ngModel" ngModel required [(ngModel)]="password" [ngModelOptions]="{standalone: true}" class="form-control mb-3" id="password" placeholder="Password">
+            <div *ngIf="pass.touched && pass.invalid" class="alert alert-danger">
+                Please Enter the password
+
+            </div>
+
+            <label for="confirmPassword" disabled="true" class="sr-only">Confirm Password</label>
+            <input type="password" #name="ngModel" ngModel required [(ngModel)]="confirmPassword" [ngModelOptions]="{standalone: true}" class="form-control mb-3" id="confirmPassword" placeholder="Re eneter password">
+
+            <label for="email" disabled="true" class="sr-only">Enter Email</label>
+            <input type="email" #name="ngModel" ngModel required [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control mb-3" id="email" placeholder="Re enter password">
+
+            <label for="contactNumber" disabled="true" class="sr-only">Contact No</label>
+            <input type="text" #name="ngModel" ngModel required [(ngModel)]="contactNumber" [ngModelOptions]="{standalone: true}" class="form-control mb-3" id="contactNumber" placeholder="Enter contac">
+
+            <div *ngIf="this.invPass" class="alert alert-danger">
+                Format is wrong
+            </div>
+
+            <button type="submit" class="btn btn-default mb-2">Register</button>
+
+            <button type="button" class="btn btn-default mb-2" (click)="clearFields()">Clear</button>
+
+            <button type="button" class="btn btn-default mb-2" (click)="homeNavigate()">Back</button>
+            <div *ngIf="this.invdata" class="alert alert-danger">
+                Incorrect data
+            </div>
+            <div *ngIf="this.registerd" class="alert alert-success">
+                Registered
+            </div>
+        </form>
+    </div>
+</div>
